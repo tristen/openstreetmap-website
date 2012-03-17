@@ -200,7 +200,7 @@ h2 {
 
 .search_container {
   height: 15px;
-  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 #search_field form {
@@ -209,11 +209,11 @@ h2 {
   padding: 0px;
 }
 
-#search_field input[type="text"] {
+#search_field input[type='text'] {
   width: 136px;
 }
 
-#search_field input[type="submit"] {
+#search_field input[type='submit'] {
   width: 26px;
   padding-left: 0px;
   padding-right: 0px;
@@ -838,7 +838,7 @@ p#contributorGuidance {
   display: inline !important;
 }
 
-#accountForm input[type=submit] {
+#accountForm input[type='submit'] {
   margin-top: 15px;
 }
 
@@ -975,13 +975,43 @@ p#contributorGuidance {
   font-size: 0.8em;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-textarea {
-  border: 1px solid #888;
+select,
+textarea,
+input[type='email'],
+input[type='url'],
+input[type='text'],
+input[type='password'] {
+  background: #ffffff;
+  border: 1px solid #c0c0c0;
+  outline: 0;
+  box-shadow:
+    inset #ddd 0 1px 2px;
+  box-sizing: border-box;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
+
+input[type='email'],
+input[type='url'],
+input[type='text'],
+input[type='password'] {
+  line-height: 24px;
+  height: 24px;
+  padding: 0 5px;
+}
+
+textarea:focus,
+input[type='email']:focus,
+input[type='url']:focus,
+input[type='text']:focus,
+input[type='password']:focus {
+  border-color:#59b;
+  box-shadow:
+    #6ac 0 0 4px,
+    inset #ddd 0 2px 3px;
+}
+
 
 /* Rules for user images */
 
