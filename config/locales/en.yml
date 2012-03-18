@@ -1444,8 +1444,8 @@ en:
       visibility: "Visibility:"
     trace_paging_nav:
       showing_page: "Showing page %{page}"
-      next: "Next »"
-      previous: "« Previous"
+      older: "Older Traces"
+      newer: "Newer Traces"
     trace:
       pending: "PENDING"
       count_points: "%{count} points"
