@@ -32,7 +32,7 @@
 <%= render :partial => 'trace_paging_nav' %>
 
 <% else %>
-  <%= t('trace.list.empty') %> <%= link_to t('trace.list.upload_new'), :action => 'create' %> <%= t('trace.list.learn_more_html') %>
+  <%= t('trace.list.empty_html', :upload_link=>link_to (t('trace.list.upload_new'), :action => 'create')) %> 
 <% end %>
 
 <%= render :partial => 'trace_optionals' %>
