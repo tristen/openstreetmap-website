@@ -1,15 +1,11 @@
 <p>
-  <% if @page > 1 %>
-    <%= link_to t('trace.trace_paging_nav.previous'), params.merge({ :page => @page - 1 }) %>
-  <% else %>
-    <%= t('trace.trace_paging_nav.previous') %>
-  <% end %>
 
-  | <%= t('trace.trace_paging_nav.showing_page', :page => @page) %> |
+<% if @traces.size > 1 %>
+<%= link_to t('trace.trace_paging_nav.newer'), params.merge({ :page => @page - 1 }) if @page > 1 %>
+<% if @traces.size > 1 and @page > 1 %>
+|
+<% end %>
 
-  <% if @traces.size < @page_size %>
-    <%= t('trace.trace_paging_nav.next') %>
-  <% else %>
-    <%= link_to t('trace.trace_paging_nav.next'), params.merge({ :page => @page + 1 }) %>
-  <% end %>
+<%= link_to t('trace.trace_paging_nav.older'), params.merge({ :page => @page + 1 }) if @traces.size >= @page_size %>
+<% end %>
 </p>
