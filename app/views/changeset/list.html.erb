@@ -1,24 +1,22 @@
 <h1><%= @heading %></h1>
 <p><%= raw(@description) %></p>
 
-<% if @edits.size > 1 %>
+<% if @edits.size >= 1 %>
   <%= render :partial => 'changeset_paging_nav' %>
-<% else %>
-  <% if @user and @user.id %>
-    <%= raw t('changeset.list.empty_user') %>
-  <% else %>
-    <%= raw t('changeset.list.empty_anon') %>
-  <% end %>
-<% end %>
 
 <div id="changeset_list_container">
   <%= render :partial => 'map' %>
   <%= render :partial => 'changesets', :locals => { :showusername => !params.has_key?(:display_name) } %>
 </div>
-
-<% if @edits.size > 1 %>
   <%= render :partial => 'changeset_paging_nav' %>
+<% else %>
+  <% if @user and @user.id %>
+    <%= t('changeset.list.empty_user_html') %>
+  <% else %>
+    <%= t('changeset.list.empty_anon_html') %>
+  <% end %>
 <% end %>
+
 
 <% unless params[:friends] or params[:nearby] -%>
 <%= atom_link_to params.merge({ :page => nil, :action => :feed }) %>
